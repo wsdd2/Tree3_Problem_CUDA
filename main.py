@@ -349,7 +349,7 @@ def benchmark_tree3_count(sum_node, colors=3):
     print("\n" + "-" * 60)
     print(f"Tree(3) count demo: total colored rooted trees with node <= {sum_node}")
 
-    if sum_node <= 7:
+    if sum_node <= 10:
         cpu_total, cpu_counts, cpu_elapsed = count_tree3_cpu_enumeration(
             sum_node,
             colors=colors,
@@ -376,7 +376,7 @@ def benchmark_tree3_count(sum_node, colors=3):
         if gpu_elapsed >= cpu_elapsed:
             print(
                 "Note: for tiny node counts, CUDA launch overhead can be larger "
-                "than the work itself. Increase SUM_NODE above 7 to show why CPU "
+                "than the work itself. Increase SUM_NODE above 10 to show why CPU "
                 "enumeration is skipped."
             )
     else:
@@ -389,7 +389,7 @@ def benchmark_tree3_count(sum_node, colors=3):
             f"GPU total: {format_tree_count_from_log(gpu_total_log)} "
             f"in {gpu_elapsed:.6f} s"
         )
-        print("CPU enumeration skipped because SUM_NODE > 7.")
+        print("CPU enumeration skipped because SUM_NODE > 10.")
 
     print("-" * 60 + "\n")
 
