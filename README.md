@@ -105,15 +105,15 @@ python Tree_plot\plot.py --max-nodes 120 --no-save
 
 ## CPU 和 GPU 对比
 
-当 `SUM_NODE <= 7` 时，代码会同时运行 CPU 和 GPU：
+当 `SUM_NODE <= 10` 时，代码会同时运行 CPU 和 GPU：
 
 ```powershell
-python Tree_plot\plot.py --sum-node 7 --count-only
+python Tree_plot\plot.py --sum-node 8 --count-only
 ```
 
 CPU 路径会真的把所有树都枚举出来，所以它给的是很直观的精确基准。GPU 路径使用动态规划计数，然后比较两边结果是否一致。
 
-当 `SUM_NODE > 7` 时，代码只运行 GPU：
+当 `SUM_NODE > 10` 时，代码只运行 GPU：
 
 ```powershell
 python Tree_plot\plot.py --sum-node 50 --count-only
